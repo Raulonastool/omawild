@@ -12,7 +12,7 @@ naturalist, not a trainer.
 Some creatures are simply random. Some only appear because of what your machine is
 actually doing right now.
 
-![The meadow](docs/map.png)
+![Omawild](docs/demo.gif)
 
 ## Install
 
@@ -35,6 +35,10 @@ o.bind("SUPER + N", "Omawild", "omarchy-shell shell toggle raulonastool.omawild 
 
 > Plugins run as unsandboxed QML inside `omarchy-shell`. Read the source before you
 > enable it.
+
+## The meadow
+
+![The meadow](docs/map.png)
 
 ## Playing
 
