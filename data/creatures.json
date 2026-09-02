@@ -1,0 +1,780 @@
+{
+  "version": 1,
+  "species": [
+    {
+      "id": "bashling",
+      "number": 1,
+      "name": "Bashling",
+      "archetype": "blob",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#2f3a45",
+        "b": "#1f2830",
+        "c": "#8fd694",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#5a6673",
+        "f": "#8fd694"
+      },
+      "classification": "Shell Creature",
+      "habitat": "Terminal Thickets",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "A small creature with a softly blinking tail.",
+        "It prefers the quiet warmth near an idle terminal.",
+        "Bashlings answer each other in short bursts that sound suspiciously like keystrokes."
+      ]
+    },
+    {
+      "id": "pipeling",
+      "number": 2,
+      "name": "Pipeling",
+      "archetype": "serpent",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#7f8fa6",
+        "b": "#5a6a80",
+        "c": "#b9c6d8",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#4a5768",
+        "f": "#b9c6d8"
+      },
+      "classification": "Conduit Creature",
+      "habitat": "Meadow Channels",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Long-bodied and rarely seen alone.",
+        "Where there is one Pipeling, a second is usually waiting just ahead.",
+        "Whatever the first one finds, it passes to the next without ever stopping to look at it."
+      ]
+    },
+    {
+      "id": "greplet",
+      "number": 3,
+      "name": "Greplet",
+      "archetype": "bird",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#d8b04a",
+        "b": "#a8863c",
+        "c": "#f0d98a",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#c8963c",
+        "f": "#e0a83c"
+      },
+      "classification": "Searching Bird",
+      "habitat": "Tall Grass",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its eyes flick side to side without pause.",
+        "It combs the same patch of grass again and again, as if the answer moved.",
+        "A Greplet will not settle until it has found the one blade it was looking for."
+      ]
+    },
+    {
+      "id": "curlfin",
+      "number": 4,
+      "name": "Curlfin",
+      "archetype": "fish",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#3f9fd0",
+        "b": "#2b6f9a",
+        "c": "#9fdcf5",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#2b6f9a",
+        "f": "#9fdcf5"
+      },
+      "classification": "Pond Swimmer",
+      "habitat": "Still Water",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It swims in slow, deliberate loops.",
+        "Curlfins seem to know when something far away is listening.",
+        "When the wider world goes quiet, Curlfins sink to the bottom and wait."
+      ],
+      "conditions": {
+        "networkOnline": true
+      }
+    },
+    {
+      "id": "difflet",
+      "number": 5,
+      "name": "Difflet",
+      "archetype": "stone",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#c05c78",
+        "b": "#7a3450",
+        "c": "#5fb86f",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#7a3450",
+        "f": "#5fb86f"
+      },
+      "classification": "Mismatched Creature",
+      "habitat": "Unsettled Ground",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its two halves never quite agree.",
+        "The markings on the left are always one step behind the right.",
+        "A Difflet is calmest in a place where nothing has been changed yet."
+      ],
+      "modifiers": [
+        {
+          "when": {
+            "gitDirty": true
+          },
+          "multiplier": 5
+        }
+      ]
+    },
+    {
+      "id": "committer",
+      "number": 6,
+      "name": "Committer",
+      "archetype": "stone",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#8a8f98",
+        "b": "#5c626c",
+        "c": "#c3c8d0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#5c626c",
+        "f": "#c3c8d0"
+      },
+      "classification": "Patient Creature",
+      "habitat": "Settled Ground",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Stone-backed and in no particular hurry.",
+        "It waits until everything around it has stopped moving.",
+        "Only then does it set its mark down, and it never takes one back."
+      ],
+      "modifiers": [
+        {
+          "when": {
+            "gitDirty": false
+          },
+          "multiplier": 4
+        }
+      ]
+    },
+    {
+      "id": "daemon",
+      "number": 7,
+      "name": "Daemon",
+      "archetype": "ghost",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#6a5a9c",
+        "b": "#42356b",
+        "c": "#a08fd0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#42356b",
+        "f": "#a08fd0"
+      },
+      "classification": "Background Spirit",
+      "habitat": "The Long Hours",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It does not seem to be doing anything.",
+        "It has, in fact, been doing something the entire time.",
+        "Daemons are older than they look, and they never announce themselves."
+      ],
+      "modifiers": [
+        {
+          "when": {
+            "hourFrom": 20,
+            "hourTo": 5
+          },
+          "multiplier": 3
+        },
+        {
+          "when": {
+            "uptimeHoursMin": 24
+          },
+          "multiplier": 3
+        }
+      ]
+    },
+    {
+      "id": "rootling",
+      "number": 8,
+      "name": "Rootling",
+      "archetype": "critter",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#b04a3a",
+        "b": "#7a2f24",
+        "c": "#e8a05a",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#7a2f24",
+        "f": "#e8a05a"
+      },
+      "classification": "Deep Burrower",
+      "habitat": "Beneath Everything",
+      "rarity": "rare",
+      "baseWeight": 2,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It surfaces rarely, and only when it wants to.",
+        "Nothing in the meadow appears able to tell it no.",
+        "The rest of this entry has been withheld. The Rootling did not consent to it."
+      ]
+    },
+    {
+      "id": "segfaulter",
+      "number": 9,
+      "name": "Segfaulter",
+      "archetype": "blob",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#c8407a",
+        "b": "#8a2450",
+        "c": "#5fe0d0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#8a2450",
+        "f": "#5fe0d0"
+      },
+      "classification": "Unstable Creature",
+      "habitat": "Unmapped Edges",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It is here. Mostly.",
+        "Observing one is difficult; they tend to stop existing mid-sentence.",
+        "A Segfaulter has never once explained where it goes. It simply is not there any more."
+      ],
+      "flags": {
+        "flicker": true
+      }
+    },
+    {
+      "id": "forkit",
+      "number": 10,
+      "name": "Forkit",
+      "archetype": "serpent",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#5fb86f",
+        "b": "#3a7a48",
+        "c": "#a8e0a8",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#3a7a48",
+        "f": "#a8e0a8"
+      },
+      "classification": "Branching Creature",
+      "habitat": "Split Paths",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its tail divides partway down.",
+        "Both halves move independently, and neither seems to be in charge.",
+        "Very occasionally two Forkits appear at once, identical, and neither is the original."
+      ]
+    },
+    {
+      "id": "cachemunk",
+      "number": 11,
+      "name": "Cachemunk",
+      "archetype": "critter",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#c98a4a",
+        "b": "#8f5c2c",
+        "c": "#f0c88a",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#8f5c2c",
+        "f": "#f0c88a"
+      },
+      "classification": "Hoarding Creature",
+      "habitat": "Tall Grass",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its cheeks are always slightly too full.",
+        "It stores small glowing blocks it may never need again.",
+        "Ask a Cachemunk to let one go and it will simply find room for another."
+      ]
+    },
+    {
+      "id": "ramble",
+      "number": 12,
+      "name": "Ramble",
+      "archetype": "fluff",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#d8d4e8",
+        "b": "#9f9ab8",
+        "c": "#f0eef8",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#9f9ab8",
+        "f": "#f0eef8"
+      },
+      "classification": "Drifting Creature",
+      "habitat": "Open Meadow",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Soft, slow, and entirely full of something.",
+        "The fuller it gets, the less it moves.",
+        "A crowded meadow is a Rambles' favourite kind of meadow."
+      ],
+      "modifiers": [
+        {
+          "when": {
+            "memoryPercentMin": 70
+          },
+          "multiplier": 4
+        }
+      ]
+    },
+    {
+      "id": "bitbat",
+      "number": 13,
+      "name": "Bitbat",
+      "archetype": "bat",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#5a4a7a",
+        "b": "#382d52",
+        "c": "#9a86c8",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#382d52",
+        "f": "#9a86c8"
+      },
+      "classification": "Night Flier",
+      "habitat": "After Dusk",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It hangs perfectly still until it doesn't.",
+        "Bitbats only unfold once the light has properly gone.",
+        "They navigate by something none of the other creatures appear to hear."
+      ],
+      "conditions": {
+        "hourFrom": 19,
+        "hourTo": 6
+      }
+    },
+    {
+      "id": "voltkit",
+      "number": 14,
+      "name": "Voltkit",
+      "archetype": "critter",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#e8c93c",
+        "b": "#a88a1c",
+        "c": "#fff0a0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#a88a1c",
+        "f": "#fff0a0"
+      },
+      "classification": "Charged Creature",
+      "habitat": "Dry Grass",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Small, quick, and faintly crackling.",
+        "It runs everywhere at once and never explains where the energy came from.",
+        "As its charge drops a Voltkit slows, sits down, and waits to be found."
+      ],
+      "conditions": {
+        "onBattery": true
+      }
+    },
+    {
+      "id": "plugbug",
+      "number": 15,
+      "name": "Plugbug",
+      "archetype": "beetle",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#3fa88a",
+        "b": "#26705c",
+        "c": "#8fe0c8",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#26705c",
+        "f": "#8fe0c8"
+      },
+      "classification": "Grounded Beetle",
+      "habitat": "Warm Stones",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its antennae end in two small prongs.",
+        "Plugbugs turn up shortly after the meadow steadies itself.",
+        "They are entirely uninterested in you and completely content."
+      ],
+      "conditions": {
+        "onBattery": false
+      }
+    },
+    {
+      "id": "mprisprite",
+      "number": 16,
+      "name": "Mprisprite",
+      "archetype": "sprite",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#e05c9c",
+        "b": "#9a2f66",
+        "c": "#ffc0e0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#9a2f66",
+        "f": "#ffc0e0"
+      },
+      "classification": "Sounding Creature",
+      "habitat": "Wherever Music Is",
+      "rarity": "rare",
+      "baseWeight": 2,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 2,
+      "entries": [
+        "It is already moving before you arrive.",
+        "A Mprisprite keeps time with something you happen to be playing, and stops when you do."
+      ],
+      "conditions": {
+        "mediaPlaying": true
+      }
+    },
+    {
+      "id": "chromite",
+      "number": 17,
+      "name": "Chromite",
+      "archetype": "sprite",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#5a9ce0",
+        "b": "#2f6aa8",
+        "c": "#c0e0ff",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#2f6aa8",
+        "f": "#c0e0ff"
+      },
+      "classification": "Polished Creature",
+      "habitat": "Bright Windows",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its shell reflects whatever is in front of it.",
+        "It follows open windows around the meadow.",
+        "Chromites collect far more than they can reasonably look at."
+      ],
+      "conditions": {
+        "focusedIsBrowser": true
+      }
+    },
+    {
+      "id": "dockling",
+      "number": 18,
+      "name": "Dockling",
+      "archetype": "stone",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#4a90c8",
+        "b": "#2c5f8a",
+        "c": "#a8d8f0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#2c5f8a",
+        "f": "#a8d8f0"
+      },
+      "classification": "Carrying Creature",
+      "habitat": "Stacked Ground",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It carries a squared-off shell that is clearly not its own.",
+        "Everything a Dockling needs is inside, sealed, and identical every time.",
+        "Set one down anywhere and it behaves exactly the same. That is the entire point."
+      ]
+    },
+    {
+      "id": "packetoad",
+      "number": 19,
+      "name": "Packetoad",
+      "archetype": "blob",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#5aa85c",
+        "b": "#2f6f34",
+        "c": "#a8e0a0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#2f6f34",
+        "f": "#a8e0a0"
+      },
+      "classification": "Pond Amphibian",
+      "habitat": "Water's Edge",
+      "rarity": "common",
+      "baseWeight": 12,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It sits at the water's edge, then is suddenly elsewhere.",
+        "Packetoads travel in small bursts and occasionally do not arrive.",
+        "When one goes missing another simply makes the trip again."
+      ],
+      "conditions": {
+        "networkOnline": true
+      }
+    },
+    {
+      "id": "uptime-ancient",
+      "number": 20,
+      "name": "Uptime Ancient",
+      "archetype": "stone",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#8a7a5a",
+        "b": "#5c4f38",
+        "c": "#d8c8a0",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#5c4f38",
+        "f": "#d8c8a0"
+      },
+      "classification": "Elder Creature",
+      "habitat": "Undisturbed Ground",
+      "rarity": "legendary",
+      "baseWeight": 1,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 1,
+      "entries": [
+        "It has been here longer than the path has."
+      ],
+      "conditions": {
+        "uptimeHoursMin": 72
+      }
+    },
+    {
+      "id": "moonbyte",
+      "number": 21,
+      "name": "Moonbyte",
+      "archetype": "ghost",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#8a9fd0",
+        "b": "#4a5a8a",
+        "c": "#e0e8ff",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#4a5a8a",
+        "f": "#e0e8ff"
+      },
+      "classification": "Late Creature",
+      "habitat": "The Small Hours",
+      "rarity": "rare",
+      "baseWeight": 2,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 2,
+      "entries": [
+        "Only ever seen when almost nobody is looking.",
+        "Moonbytes are perfectly friendly. They simply keep unusual hours."
+      ],
+      "conditions": {
+        "hourFrom": 0,
+        "hourTo": 4
+      }
+    },
+    {
+      "id": "themedle",
+      "number": 22,
+      "name": "Themedle",
+      "archetype": "blob",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#9a6fd0",
+        "b": "#5f3f8a",
+        "c": "#d8c0ff",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#5f3f8a",
+        "f": "#d8c0ff"
+      },
+      "classification": "Shifting Creature",
+      "habitat": "Everywhere, Differently",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "Its colouring does not match the last one you saw.",
+        "Themedles take on whatever palette the meadow is currently wearing.",
+        "No two observers entirely agree on what colour a Themedle is."
+      ],
+      "flags": {
+        "themed": true
+      }
+    },
+    {
+      "id": "cursoroo",
+      "number": 23,
+      "name": "Cursoroo",
+      "archetype": "critter",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#e0e4ea",
+        "b": "#9aa0aa",
+        "c": "#ffffff",
+        "e": "#f2f6fa",
+        "p": "#0d1117",
+        "d": "#9aa0aa",
+        "f": "#ffffff"
+      },
+      "classification": "Hopping Creature",
+      "habitat": "Open Ground",
+      "rarity": "uncommon",
+      "baseWeight": 5,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 3,
+      "entries": [
+        "It never stays where you last saw it.",
+        "Its tail comes to a sharp white point.",
+        "Cursoroos hop away from attention and land exactly where you were about to look."
+      ],
+      "flags": {
+        "hops": true
+      }
+    },
+    {
+      "id": "kernel",
+      "number": 24,
+      "name": "Kernel",
+      "archetype": "sprite",
+      "palette": {
+        "o": "#0d1117",
+        "a": "#f0f4f8",
+        "b": "#8a94a0",
+        "c": "#ffd05a",
+        "e": "#0d1117",
+        "p": "#f0f4f8",
+        "d": "#8a94a0",
+        "f": "#ffd05a"
+      },
+      "classification": "???",
+      "habitat": "???",
+      "rarity": "legendary",
+      "baseWeight": 1,
+      "terrain": [
+        "grass"
+      ],
+      "observationsRequired": 1,
+      "entries": [
+        "Everything in the meadow was already standing on it."
+      ],
+      "conditions": {
+        "hourFrom": 3,
+        "hourTo": 4,
+        "uptimeHoursMin": 100
+      },
+      "flags": {
+        "secret": true
+      }
+    }
+  ]
+}

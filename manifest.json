@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "raulonastool.omawild",
+  "name": "Omawild",
+  "version": "0.1.0",
+  "author": "raulonastool",
+  "description": "A tiny creature-discovery game hiding inside your computer",
+  "kinds": ["overlay"],
+  "entryPoints": { "overlay": "Omawild.qml" }
+}

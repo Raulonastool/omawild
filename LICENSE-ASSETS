@@ -1,0 +1,12 @@
+Creative Commons Zero v1.0 Universal (CC0 1.0)
+
+The original artwork and audio in this repository -- every creature and
+terrain sprite in js/Sprites.js and js/TileArt.js, and every sound in
+sounds/ -- is dedicated to the public domain under CC0 1.0.
+
+All of it was authored for this project. The pixel art is stored as
+character grids rather than image files; the sounds are synthesized from
+scratch. No third-party game assets, sprites, audio, names, or descriptions
+were used or referenced.
+
+Full text: https://creativecommons.org/publicdomain/zero/1.0/legalcode

@@ -1,0 +1,24 @@
+{
+  "name": "Quiet Meadow",
+  "width": 20,
+  "height": 12,
+  "spawn": { "x": 4, "y": 6 },
+  "legend": {
+    ".": "ground", "g": "grass", "T": "tree", "w": "water",
+    "r": "rock", "u": "ruin", "a": "artifact", "p": "path"
+  },
+  "rows": [
+    "TTTT...........TTTTT",
+    "TT......ggg......TTT",
+    "T......ggggg......TT",
+    "........ggg.........",
+    "..pppp..............",
+    "..p..pp....wwww.....",
+    "..p...pp...wwwww....",
+    "..p....ppp..wwww....",
+    "..p......ggg........",
+    "..p.....ggggg....rr.",
+    "TT.......ggg....rrru",
+    "TTTT..........TTTTTT"
+  ]
+}
