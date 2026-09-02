@@ -13,6 +13,19 @@ Item {
   property color accent: "#ffffff"
   property color dim: "#888888"
   property color rowFill: "#22ffffff"
+  property color themeAccent: "#8fb8f0"
+
+  // Themedle is recorded in whatever palette the desktop is wearing.
+  function paletteFor(c) {
+    if (!c) return ({})
+    if (!(c.flags && c.flags.themed)) return c.palette
+    var p = {}
+    for (var k in c.palette) p[k] = c.palette[k]
+    p.a = String(root.themeAccent)
+    p.b = String(Qt.darker(root.themeAccent, 1.7))
+    p.c = String(Qt.lighter(root.themeAccent, 1.5))
+    return p
+  }
 
   readonly property var visibleList: {
     var out = []
@@ -124,7 +137,7 @@ Item {
           anchors.horizontalCenter: parent.horizontalCenter
           visible: root.current && root.known(root.current)
           rows: root.current ? (Sprites.ARCHETYPES[root.current.archetype] || Sprites.ARCHETYPES.blob) : []
-          palette: root.current ? root.current.palette : ({})
+          palette: root.paletteFor(root.current)
           pixel: 5
         }
         // Unknown species show a flat silhouette instead of the real colours.

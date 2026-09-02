@@ -32,7 +32,9 @@ Item {
   property bool sawFirstEncounter: false
 
   property int hour: 12
-  readonly property string phase: TileArt.phaseFor(hour)
+  // -1 = follow the clock. Set with setHour() to preview a time of day.
+  property int hourOverride: -1
+  readonly property string phase: TileArt.phaseFor(hourOverride >= 0 ? hourOverride : hour)
   property var palette: TileArt.paletteFor("day")
   onPhaseChanged: root.palette = TileArt.paletteFor(root.phase)
 
@@ -176,6 +178,8 @@ Item {
   property int encObserved: 0
   property string encStage: "appeared"
   property string encFlavour: ""
+  // Reseeded every encounter, so Difflet's halves differ each time.
+  property int encVariant: 0
 
   function beginEncounter() {
     var s = Encounters.pick(root.creatures, "grass", ctx.snapshot)
@@ -184,9 +188,16 @@ Item {
     root.encStage = "appeared"
     root.encObserved = root.record(s.id).observed
     root.encFlavour = Math.random() < 0.35 ? Encounters.flavourFor(ctx.snapshot) : ""
+    root.encVariant = Math.floor(Math.random() * 1000)
     var firstSighting = root.record(s.id).seen === 0
     root.screen = "encounter"
     sfx.play(firstSighting ? "discover" : "encounter")
+    root.recordSighting(s)
+  }
+
+  // Every path that puts a creature on screen records the sighting, so
+  // `observed` can never run ahead of `seen`.
+  function recordSighting(s) {
     root.touchSave(function(n) {
       var rec = n.species[s.id] || { seen: 0, observed: 0, firstSeen: "" }
       rec.seen += 1
@@ -275,6 +286,33 @@ Item {
     }
     return "eligible(" + el.length + "): " + parts.join(", ")
          + "  ||  excluded(" + excluded.length + "): " + excluded.join(", ")
+  }
+
+  // Preview a time of day: setHour(23) for night, setHour(-1) to follow the clock.
+  function setHour(h) {
+    root.hourOverride = parseInt(h, 10)
+    if (isNaN(root.hourOverride)) root.hourOverride = -1
+    return root.phase
+  }
+
+  // Summon one species by id, for checking its behaviour without waiting for
+  // the right time of day, battery state, or a lucky roll.
+  function forceSpecies(id) {
+    if (root.screen !== "map") root.screen = "map"
+    var want = String(id).trim()
+    for (var i = 0; i < root.creatures.length; i++) {
+      var c = root.creatures[i]
+      if (c.id !== want) continue
+      root.encSpecies = c
+      root.encStage = "appeared"
+      root.encObserved = root.record(c.id).observed
+      root.encFlavour = ""
+      root.encVariant = Math.floor(Math.random() * 1000)
+      root.screen = "encounter"
+      root.recordSighting(c)
+      return c.name
+    }
+    return "no such species: " + want
   }
 
   // Force an encounter, for testing the loop without walking for ten minutes.
@@ -448,6 +486,11 @@ Item {
               ink: "#e8eef4"
               accent: root.accentColor
               dim: Qt.rgba(0.91, 0.93, 0.96, 0.5)
+              phase: root.phase
+              mediaPlaying: ctx.mediaPlaying
+              batteryPercent: ctx.batteryPercent
+              themeAccent: root.accentColor
+              variantSeed: root.encVariant
               unit: Math.max(4, Math.round(root.tile / 5))
             }
           }
@@ -466,6 +509,7 @@ Item {
               accent: root.accentColor
               dim: root.dimColor
               rowFill: root.rowFill
+              themeAccent: root.accentColor
             }
           }
         }

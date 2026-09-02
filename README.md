@@ -101,6 +101,25 @@ a packet. Omawild works entirely offline.
 To point the Git signal at a repository you actually work in, set `gitWatchPath` in
 `ui/Context.qml`. It defaults to `~/Work`.
 
+## Small things creatures do
+
+Personality is carried by tiny behaviours rather than extra systems. Each is a
+flag on the species in `data/creatures.json`, so a new creature can opt in
+without touching any code:
+
+| Creature | Does |
+|----------|------|
+| Bashling | Blinks like a terminal cursor — a long wait, then a short close |
+| Segfaulter | Flickers, and is not always entirely there |
+| Cursoroo | Will not stay where you last saw it, and hops off mid-encounter |
+| Cachemunk | Pockets another glowing block into its cheeks now and then |
+| Bitbat | Hangs upside down once it is properly night |
+| Themedle | Wears whatever palette your Omarchy theme is wearing |
+| Difflet | Its two halves never match, and the mismatch differs every encounter |
+| Voltkit | Slows down and sits lower as the battery falls |
+| Mprisprite | Keeps time with whatever is actually playing |
+| Rootling | Withholds its classification, habitat and rarity until fully observed |
+
 ## Creatures
 
 Twenty-four species, all original. Content is data-driven in
@@ -153,6 +172,17 @@ omarchy-shell shell summon raulonastool.omawild '{}'
 omarchy-shell shell call raulonastool.omawild diag ""
 omarchy-shell shell call raulonastool.omawild pool ""   # who is eligible right now, and why not
 ```
+
+Two more helpers make the rarer behaviours reachable without waiting for the
+right hour, battery level, or a lucky roll:
+
+```bash
+omarchy-shell shell call raulonastool.omawild setHour "23"          # preview night; "-1" follows the clock
+omarchy-shell shell call raulonastool.omawild forceSpecies "bitbat" # summon one species
+```
+
+`forceSpecies` records the sighting exactly as a real encounter would, so it
+cannot leave your save inconsistent.
 
 `pool` is the quickest way to check a context condition is doing what you think:
 

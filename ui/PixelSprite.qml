@@ -10,6 +10,8 @@ Canvas {
   property var palette: ({})
   property int pixel: 4
   property real alpha: 1.0
+  // Vertical flip, for creatures that hang upside down.
+  property bool flipV: false
 
   readonly property int cols: (rows && rows.length) ? String(rows[0]).length : 0
   readonly property int lines: rows ? rows.length : 0
@@ -19,6 +21,12 @@ Canvas {
   width: implicitWidth
   height: implicitHeight
   renderStrategy: Canvas.Cooperative
+
+  transform: Scale {
+    origin.x: root.width / 2
+    origin.y: root.height / 2
+    yScale: root.flipV ? -1 : 1
+  }
 
   onRowsChanged: requestPaint()
   onPaletteChanged: requestPaint()

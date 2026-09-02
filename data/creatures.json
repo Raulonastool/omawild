@@ -28,7 +28,10 @@
         "A small creature with a softly blinking tail.",
         "It prefers the quiet warmth near an idle terminal.",
         "Bashlings answer each other in short bursts that sound suspiciously like keystrokes."
-      ]
+      ],
+      "flags": {
+        "blink": true
+      }
     },
     {
       "id": "pipeling",
@@ -155,7 +158,10 @@
           },
           "multiplier": 5
         }
-      ]
+      ],
+      "flags": {
+        "varies": true
+      }
     },
     {
       "id": "committer",
@@ -265,7 +271,10 @@
         "It surfaces rarely, and only when it wants to.",
         "Nothing in the meadow appears able to tell it no.",
         "The rest of this entry has been withheld. The Rootling did not consent to it."
-      ]
+      ],
+      "flags": {
+        "withholds": true
+      }
     },
     {
       "id": "segfaulter",
@@ -355,7 +364,10 @@
         "Its cheeks are always slightly too full.",
         "It stores small glowing blocks it may never need again.",
         "Ask a Cachemunk to let one go and it will simply find room for another."
-      ]
+      ],
+      "flags": {
+        "stuffs": true
+      }
     },
     {
       "id": "ramble",
@@ -425,6 +437,9 @@
       "conditions": {
         "hourFrom": 19,
         "hourTo": 6
+      },
+      "flags": {
+        "invertsAtNight": true
       }
     },
     {
@@ -457,6 +472,9 @@
       ],
       "conditions": {
         "onBattery": true
+      },
+      "flags": {
+        "tiresWithBattery": true
       }
     },
     {
@@ -520,6 +538,9 @@
       ],
       "conditions": {
         "mediaPlaying": true
+      },
+      "flags": {
+        "dancesToMedia": true
       }
     },
     {
